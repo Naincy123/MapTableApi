@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="text-center">{{title}}</h1>
+    
+    <div class="row">
+        <div class="col-md-2">Filter By:</div>
+        <div class="col-md-6"><input [(ngModel)]='searchText' type="text" class="Form-control"/></div>
+      </div>
+      <br/>
+
+    <div class="row">
+        <div class="table-responsive">
+          <table class="table table-striped text-center table-hover" >
+            <thead class="bg-primary">
+              
+              <th class="text-center">
+                Id
+              </th>
+              <th class="text-center">
+                Name
+              </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of courses|coursefilter:searchText">
+                <td>
+                    {{p.CourseId}}
+                </td>
+                <td>
+                    {{p.CourseName}}
+                </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+        
